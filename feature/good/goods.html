@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="th">
+<a href="goods.html" class="active">
+    <i class="fa-solid fa-gift"></i> Goods
+</a>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swiss Products</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body>
+
+    <header>
+
+        <div class="logo">
+            Swiss Products
+        </div>
+
+        <nav>
+
+            <a href="../index.html">
+                <i class="fa-solid fa-house"></i> หน้าแรก
+            </a>
+
+            <a href="../attaction/attactions.html">
+                <i class="fa-solid fa-mountain"></i> Attraction
+            </a>
+
+            <a href="../food/foods.html">
+                <i class="fa-solid fa-utensils"></i> Food
+            </a>
+
+            <a href="../good/goods.html">
+                <i class="fa-solid fa-gift"></i> Goods
+            </a>
+
+            <a href="../contact/contacts.html">
+                <i class="fa-solid fa-envelope"></i> Contact
+            </a>
+
+            <button id="darkBtn">
+                <i class="fa-solid fa-moon"></i>
+            </button>
+
+        </nav>
+
+    </header>
+
+    <section class="hero">
+
+        <h1>ผลิตภัณฑ์จากสวิตเซอร์แลนด์</h1>
+
+        <p>
+
+            รวมของฝากและสินค้าคุณภาพระดับโลก
+
+        </p>
+
+        <input type="text" id="search" placeholder="ค้นหาสินค้า...">
+
+    </section>
+
+    <section class="filter">
+
+        <button data-type="ทั้งหมด">ทั้งหมด</button>
+
+        <button data-type="ช็อกโกแลต">ช็อกโกแลต</button>
+
+        <button data-type="นาฬิกา">นาฬิกา</button>
+
+        <button data-type="มีด">มีด</button>
+
+        <button data-type="ชีส">ชีส</button>
+
+        <button data-type="กระเป๋า">กระเป๋า</button>
+
+    </section>
+
+    <section class="products" id="products">
+
+    </section>
+
+    <div class="popup" id="popup">
+
+        <div class="popup-content">
+
+            <span id="close">&times;</span>
+
+            <img id="popupImg">
+
+            <h2 id="popupName"></h2>
+
+            <p id="popupText"></p>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

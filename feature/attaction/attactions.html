@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Switzerland Travel</title>
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;600;700&display=swap">
+
+<style>
+
+.swiss-travel *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Sarabun',sans-serif;
+}
+
+.swiss-travel{
+    background:linear-gradient(to bottom,#e3f2fd,#f8fbff);
+    color:#333;
+}
+
+.swiss-travel .navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:linear-gradient(135deg,#2196f3,#0d47a1);
+    padding:15px 40px;
+    position:sticky;
+    top:0;
+    z-index:100;
+    box-shadow:0 4px 15px rgba(0,0,0,.2);
+}
+
+.swiss-travel .logo{
+    color:white;
+    font-size:1.8rem;
+    font-weight:700;
+}
+
+.swiss-travel .nav-links{
+    list-style:none;
+    display:flex;
+    gap:25px;
+}
+
+.swiss-travel .nav-links a{
+    color:white;
+    text-decoration:none;
+}
+
+.swiss-travel .hero{
+    background:
+    linear-gradient(rgba(13,71,161,.55),rgba(33,150,243,.45)),
+    url("https://images.unsplash.com/photo-1527668752968-14dc70a27c95");
+    background-size:cover;
+    background-position:center;
+    color:white;
+    text-align:center;
+    padding:100px 20px;
+}
+
+.swiss-travel .hero h1{
+    font-size:3rem;
+}
+
+.swiss-travel .cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:30px;
+    padding:60px 40px;
+    max-width:1400px;
+    margin:auto;
+}
+
+.swiss-travel .card{
+    background:white;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 8px 20px rgba(33,150,243,.15);
+    transition:.3s;
+
+    display:flex;
+    flex-direction:column;
+}
+
+.swiss-travel .card:hover{
+    transform:translateY(-10px);
+}
+
+.swiss-travel .card-img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+.swiss-travel .card-body{
+    padding:20px;
+    display:flex;
+    flex-direction:column;
+    flex:1;
+}
+
+.swiss-travel .card-body h2{
+    color:#1565c0;
+}
+
+.swiss-travel .card-body p{
+    color:#555;
+    margin:10px 0;
+    flex:1;
+}
+
+.swiss-travel .btn{
+    margin-top:auto;
+    display:inline-block;
+    padding:10px 14px;
+    background:#0d47a1;
+    color:white;
+    text-decoration:none;
+    border-radius:10px;
+    font-size:14px;
+    transition:.3s;
+}
+
+.swiss-travel .btn:hover{
+    background:#2196f3;
+}
+
+.swiss-travel footer{
+    background:#0d47a1;
+    color:white;
+    text-align:center;
+    padding:25px;
+    margin-top:30px;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+.swiss-travel{
+    position:relative;
+    overflow-x:hidden;
+}
+
+.swiss-travel::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:
+    radial-gradient(circle at 20% 20%,rgba(255,255,255,.25),transparent 30%),
+    radial-gradient(circle at 80% 40%,rgba(255,255,255,.15),transparent 25%);
+    pointer-events:none;
+    z-index:0;
+    animation:bgFloat 15s ease-in-out infinite;
+}
+
+@keyframes bgFloat{
+    0%,100%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(-30px);
+    }
+}
+
+.swiss-travel .navbar{
+    background:rgba(13,71,161,.85);
+    backdrop-filter:blur(12px);
+}
+
+.swiss-travel .nav-links a{
+    position:relative;
+    transition:.3s;
+}
+
+.swiss-travel .nav-links a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-5px;
+    width:0;
+    height:2px;
+    background:white;
+    transition:.3s;
+}
+
+.swiss-travel .nav-links a:hover::after{
+    width:100%;
+}
+
+.swiss-travel .hero{
+    background-attachment:fixed;
+}
+
+.swiss-travel .hero h1{
+    animation:heroDown 1s ease;
+}
+
+.swiss-travel .hero p{
+    animation:heroUp 1.2s ease;
+}
+
+@keyframes heroDown{
+    from{
+        opacity:0;
+        transform:translateY(-60px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes heroUp{
+    from{
+        opacity:0;
+        transform:translateY(60px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.swiss-travel .card{
+    position:relative;
+    transition:.5s;
+}
+
+.swiss-travel .card:hover{
+    transform:
+    translateY(-15px)
+    scale(1.03);
+    box-shadow:
+    0 25px 50px rgba(33,150,243,.25);
+}
+
+.swiss-travel .card::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:-120%;
+    width:60%;
+    height:100%;
+    background:
+    linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.5),
+        transparent
+    );
+    transition:.8s;
+    z-index:2;
+}
+
+.swiss-travel .card:hover::before{
+    left:130%;
+}
+
+.swiss-travel .card-img{
+    transition:.8s;
+}
+
+.swiss-travel .card:hover .card-img{
+    transform:scale(1.12);
+}
+
+.swiss-travel .card-body h2{
+    transition:.3s;
+}
+
+.swiss-travel .card:hover h2{
+    color:#2196f3;
+}
+
+.swiss-travel .btn{
+    position:relative;
+    overflow:hidden;
+}
+
+.swiss-travel .btn::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:-100%;
+    width:100%;
+    height:100%;
+    background:
+    linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,.4),
+        transparent
+    );
+}
+
+.swiss-travel .btn:hover::before{
+    left:100%;
+    transition:.7s;
+}
+
+.swiss-travel .btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 10px 25px rgba(33,150,243,.4);
+}
+
+.swiss-travel footer{
+    position:relative;
+    overflow:hidden;
+}
+
+.swiss-travel footer::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:-100%;
+    width:100%;
+    height:100%;
+    background:
+    linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.15),
+        transparent
+    );
+    animation:footerGlow 6s linear infinite;
+}
+
+@keyframes footerGlow{
+    100%{
+        left:120%;
+    }
+}
+
+.reveal{
+    opacity:0;
+    transform:translateY(50px);
+}
+
+.reveal.show{
+    opacity:1;
+    transform:translateY(0);
+    transition:1s;
+}
+
+@media(max-width:768px){
+
+    .swiss-travel .navbar{
+        flex-direction:column;
+        gap:15px;
+        padding:20px;
+    }
+
+    .swiss-travel .nav-links{
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .swiss-travel .hero h1{
+        font-size:2rem;
+    }
+
+    .swiss-travel .cards{
+        padding:25px 15px;
+    }
+
+}
+</style>
+</head>
+
+<body class="swiss-travel">
+
+<nav class="navbar">
+    <div class="logo">Switzerland Travel</div>
+
+    <ul class="nav-links">
+        <li><a href="../index.html">หน้าหลัก</a></li>
+        <li><a href="../attaction/attactions.html">ท่องเที่ยว</a></li>
+        <li><a href="../food/foods.html">อาหาร</a></li>
+        <li><a href="../good/goods.html">สินค้า</a></li>
+        <li><a href="../contact/contacts.html">ติดต่อ</a></li>
+    </ul>
+</nav>
+
+<header class="hero">
+    <h1>Switzerland Travel</h1>
+    <p>ดินแดนแห่งภูเขาแอลป์ ทะเลสาบ และธรรมชาติอันงดงาม</p>
+</header>
+
+<section class="cards">
+
+    <div class="card">
+            <img class="card-img" src="mGk6d7rv-image2-1024x683.png">
+            <div class="card-body">
+                <h2>Jungfraujoch</h2>
+                <p>ยอดเขายุงเฟราในสวิตเซอร์แลนด์ สูง 3,466 เมตร มีสถานีรถไฟและถ้ำน้ำแข็ง เป็นจุดชมวิวสวยระดับโลกและแลนด์มาร์กสำคัญของสวิส</p>
+                <a class="btn" href="https://maps.app.goo.gl/AFrDkyDvjTr9EDqRA" target="_blank">MAPS</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img class="card-img" src="image15-1024x684.jpg">
+            <div class="card-body">
+                <h2>Matterhorn</h2>
+                <p>แมทเทอร์ฮอร์นเป็นยอดเขาที่สวยที่สุดแห่งหนึ่งของโลก อยู่ที่เมืองเซอร์แมท ประเทศสวิตเซอร์แลนด์ เมืองปลอดรถยนต์ สามารถชมวิวจากเมืองหรือขึ้นเคเบิลคาร์ไปใกล้ยอดเขาได้ และยังเป็นแรงบันดาลใจโลโก้ Toblerone ด้วย</p>
+                <a class="btn" href="https://maps.app.goo.gl/59tX1JPrs5vTrHFS8" target="_blank">MAPS</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img class="card-img" src="image36-1024x683.jpg">
+            <div class="card-body">
+                <h2>Interlaken</h2>
+                <p>อินเทอร์ลาเคินเป็นเมืองระหว่างทะเลสาบทูนและบริเอนซ์ ล้อมรอบด้วยภูเขา มีจุดชมวิว Harder Kulm และกิจกรรมล่องเรือ เป็นเมืองท่องเที่ยวสโลว์ไลฟ์ของสวิตเซอร์แลนด์</p>
+                <a class="btn" href="https://maps.app.goo.gl/pNJoBaBYMh2W6HiM6" target="_blank">MAPS</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img class="card-img" src="xsjBiQvf-image17-1024x683.jpg">
+            <div class="card-body">
+                <h2>Chapel Bridge</h2>
+                <p>สะพานชาเปลเป็นสะพานไม้เก่าแก่ที่สุดในโลกที่เมืองลูเซิร์น สร้างมาตั้งแต่ก่อนศตวรรษที่ 14 มีภาพวาดเก่าและหอคอยกลางน้ำ เป็นจุดเที่ยวสำคัญของสวิตเซอร์แลนด์</p>
+                <a class="btn" href="https://maps.app.goo.gl/kdzebMmgwv3HXvSb8" target="_blank">MAPS</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img class="card-img" src="jSNvDLb9-image1-1024x683.jpg">
+            <div class="card-body">
+                <h2>Lauterbrunnen</h2>
+                <p>เลาเทอร์บรุนเนินเป็นหมู่บ้านในหุบเขาใกล้เมือง Interlaken โอบล้อมด้วยภูเขาและน้ำตกสูง สวยเหมือนสวรรค์และเป็นทางผ่านไปเทือกเขาแอลป์ของสวิตเซอร์แลนด์</p>
+                <a class="btn" href="https://maps.app.goo.gl/7t9UDNqiV14X6MDV6" target="_blank">MAPS</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img class="card-img" src="jgkVvN3C-image31-1024x683.jpg">
+            <div class="card-body">
+                <h2>Bernina Express</h2>
+                <p>เบอร์นิน่าเอ็กซ์เพรสเป็นเส้นทางรถไฟชมวิวที่สวยที่สุดสายหนึ่งของสวิตเซอร์แลนด์ วิ่งจากเมือง Chur ไปยัง Tirano ผ่านเทือกเขาแอลป์ ทะเลสาบ และธรรมชาติสวยงาม ระยะทางราว 121 กม. และได้รับการขึ้นทะเบียนเป็นมรดกโลก UNESCO</p>
+                <a class="btn" href="https://maps.app.goo.gl/F92kiLMpTSWUV7j59" target="_blank">MAPS</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img class="card-img" src="uwJRmFyK-image21-1024x683.jpg">
+            <div class="card-body">
+                <h2>Zurich</h2>
+                <p>ซูริคเป็นเมืองที่ใหญ่ที่สุดของสวิตเซอร์แลนด์ ศูนย์กลางธุรกิจและเทคโนโลยีที่ทันสมัย แต่ยังคงมีเมืองเก่าและสถาปัตยกรรมโบราณให้ชม เช่นพิพิธภัณฑ์และโบสถ์ต่าง ๆ โดยเฉพาะ Zürich และพิพิธภัณฑ์แห่งชาติสวิตเซอร์แลนด์ Swiss National Museum รวมถึงธรรมชาติรอบเมืองที่สวยงามด้วย</p>
+                <a class="btn" href="https://maps.app.goo.gl/ncu3TguQ8rBvMJTLA" target="_blank">MAPS</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img class="card-img" src="w91krM8B-image14-1024x683.jpg">
+            <div class="card-body">
+                <h2>Mt. Pilatus</h2>
+                <p>ยอดเขาพิลาตุสใกล้เมืองลูเซิร์น เป็นแลนด์มาร์กที่มีรถไฟฟันเฟืองชันที่สุดในโลกและกระเช้าไฟฟ้า มีจุดชมวิว ร้านอาหาร และที่พัก วิวสวยมากระหว่างทางขึ้นเขา</p>
+                <a class="btn" href="https://maps.app.goo.gl/eQQLqitZCALmqfxL8" target="_blank">MAPS</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img class="card-img" src="image5-1024x684.jpg">
+            <div class="card-body">
+                <h2>Aletsch Glacier</h2>
+                <p>ธารน้ำแข็งอเลิท์ซ (Aletsch Glacier) เป็นธารน้ำแข็งที่ใหญ่ที่สุดในเทือกเขาแอลป์ ยาวราว 23 กม. ได้ขึ้นทะเบียนเป็นมรดกโลก UNESCO และสามารถไปล่องชมความสวยงามของธารน้ำแข็งได้</p>
+                <a class="btn" href="https://maps.app.goo.gl/NHx2FATVdZD5piDX8" target="_blank">MAPS</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img class="card-img" src="ou0Bkqbo-image10-1024x683.jpg">
+            <div class="card-body">
+                <h2>Glacier Express</h2>
+                <p>กลาเซียร์เอ็กซ์เพรสเป็นรถไฟชมวิวที่วิ่งจาก St. Moritz ไป Zermatt ผ่านเทือกเขาแอลป์ของสวิตเซอร์แลนด์ ใช้เวลาประมาณ 8–9 ชั่วโมง ผ่านสะพานและอุโมงค์จำนวนมาก พร้อมวิวภูเขา แม่น้ำ และธรรมชาติสวยตลอดเส้นทาง</p>
+                <a class="btn" href="https://maps.app.goo.gl/XBSbdaxP9o73rq1o8" target="_blank">MAPS</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img class="card-img" src="image6-1024x682.jpg">
+            <div class="card-body">
+                <h2>Rhine Falls</h2>
+                <p>น้ำตกไรน์เป็นน้ำตกที่ใหญ่ที่สุดในยุโรป ตั้งอยู่กลางแม่น้ำไรน์ในประเทศสวิตเซอร์แลนด์ มีวิวสวยแปลกตา รายล้อมด้วยบ้านและปราสาท สามารถล่องเรือเข้าใกล้น้ำตกหรือเดินชมรอบ ๆ ได้</p>
+                <a class="btn" href="https://maps.app.goo.gl/MbiUSm3TRtv35fTYA" target="_blank">MAPS</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img class="card-img" src="image11-1024x682.jpg">
+            <div class="card-body">
+                <h2>Lake Geneva</h2>
+                <p>ทะเลสาบเจนีวาเป็นทะเลสาบใหญ่ที่สุดของยุโรปตะวันตก ตั้งอยู่ระหว่างสวิตเซอร์แลนด์และฝรั่งเศส มีสวนสาธารณะและเมืองสวยรอบ ๆ ไฮไลต์คือน้ำพุ Jet d’Eau ที่พ่นน้ำสูงกว่า 140 เมตรในเมือง Geneva</p>
+                <a class="btn" href="https://maps.app.goo.gl/m1iz3MjqKt55otrX6" target="_blank">MAPS</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img class="card-img" src="image33-1024x678.jpg">
+            <div class="card-body">
+                <h2>Chillon Castle</h2>
+                <p>ปราสาทชิลยองเป็นปราสาทสไตล์กอทิกริมทะเลสาบเจนีวา ใกล้เมือง Montreux สร้างตั้งแต่ศตวรรษที่ 13 เคยใช้เก็บค่าผ่านทางเรือ ภายในมีห้องกว่า 25 ห้องและจุดชมวิวสวย ๆ ของทะเลสาบ เป็นแลนด์มาร์กประวัติศาสตร์สำคัญของสวิตเซอร์แลนด์</p>
+                <a class="btn" href="https://maps.app.goo.gl/MnNwv6szTVFhJLgM8" target="_blank">MAPS</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img class="card-img" src="image16-1024x586.jpg">
+            <div class="card-body">
+                <h2>Lion Monument</h2>
+                <p>อนุสาวรีย์สิงโตสะอื้นเป็นอนุสรณ์หินแกะสลักในเมือง Lucerne สร้างเพื่อรำลึกทหารสวิสที่เสียชีวิตจากการปกป้องราชวงศ์ฝรั่งเศส เป็นสัญลักษณ์ความกล้าหาญและความภักดีของชาวเมืองนี้</p>
+                <a class="btn" href="https://maps.app.goo.gl/jWUuEHwSNmPgJD739" target="_blank">MAPS</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img class="card-img" src="LQ8yZDVq-image8-1024x683.jpg">
+            <div class="card-body">
+                <h2>Mt. Titlis</h2>
+                <p>ยอดเขาทิตลิสเป็นยอดเขาสูง 3,238 เมตรที่เมือง Engelberg มีหิมะตลอดปี กระเช้าหมุน 360 องศา ถ้ำน้ำแข็ง และสะพานแขวน เป็นอีกหนึ่งแลนด์มาร์กยอดฮิตของสวิตเซอร์แลนด์</p>
+                <a class="btn" href="https://maps.app.goo.gl/euHh5rabMydRgqeP9" target="_blank">MAPS</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img class="card-img" src="image12-1024x683.png">
+            <div class="card-body">
+                <h2>Mt. Rigi</h2>
+                <p>ภูเขาริกิถูกขนานนามว่า “ราชินีแห่งขุนเขา” ตั้งอยู่ตอนกลางของสวิตเซอร์แลนด์ มีวิวทะเลสาบและภูเขารอบตัวแบบ 360 องศา และสามารถนั่งรถไฟเก่าแก่ขึ้นชมธรรมชาติได้ ถือเป็นอีกหนึ่งจุดชมวิวสวยของสวิตเซอร์แลนด์</p>
+                <a class="btn" href="https://maps.app.goo.gl/uQ74FokJtwo1AYMf8" target="_blank">MAPS</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img class="card-img" src="image32-1024x683.png">
+            <div class="card-body">
+                <h2>Lausanne</h2>
+                <p>เมืองโลซานน์เป็นเมืองเก่าริมทะเลสาบเจนีวาที่มีมาตั้งแต่สมัยโรมัน แบ่งเป็นโซนเมืองบนเนินเขาและริมทะเลสาบ เหมาะกับการชมวิวและพักผ่อนแบบชิล ๆ ในสวิตเซอร์แลนด์</p>
+                <a class="btn" href="https://maps.app.goo.gl/39CbHtSWd9XQLdfT8" target="_blank">MAPS</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img class="card-img" src="image34-1024x683.png">
+            <div class="card-body">
+                <h2>Montreux</h2>
+                <p>“มองเทรอ” เป็นเมืองตากอากาศริมทะเลสาบเจนีวา ล้อมรอบด้วยเทือกเขาแอลป์ เหมาะสำหรับการพักผ่อน ล่องเรือชมวิว และสามารถเที่ยวปราสาทชิลยองใกล้ ๆ ได้ เป็นเมืองชิล ๆ ของสวิตเซอร์แลนด์ที่วิวสวยมาก</p>
+                <a class="btn" href="https://maps.app.goo.gl/eAkcMkmsXejEmvAv5" target="_blank">MAPS</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img class="card-img" src="image28-1024x768.png">
+            <div class="card-body">
+                <h2>Gruyeres</h2>
+                <p>เมืองกรุยแยร์เป็นเมืองเก่าในสวิตเซอร์แลนด์ที่มีชื่อเสียงเรื่องชีสกรุยแยร์ ใช้ทำฟองดูได้อร่อยมาก และมีปราสาทกรุยแยร์สมัยศตวรรษที่ 13 เป็นแลนด์มาร์กสำคัญของเมือง</p>
+                <a class="btn" href="https://maps.app.goo.gl/z2KiTnMbEGdNxhNv6" target="_blank">MAPS</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img class="card-img" src="Guxr4jHV-image26-1024x683.png">
+            <div class="card-body">
+                <h2>Bern</h2>
+                <p>กรุงเบิร์นเป็นเมืองหลวงของสวิตเซอร์แลนด์ มีเสน่ห์แบบเมืองเก่าและบรรยากาศคลาสสิก ถูกเรียกว่า “เมืองหมี” เพราะชื่อ Bern มาจากคำว่า Bear เมืองนี้เหมาะกับการเดินเที่ยวชมสถาปัตยกรรมและบรรยากาศชิล ๆ ที่ทำให้นักท่องเที่ยวหลงรัก Bern</p>
+                <a class="btn" href="https://maps.app.goo.gl/6N2RcLeRQpsCSP5V9" target="_blank">MAPS</a>
+            </div>
+        </div>
+</section>
+
+<footer>
+    💙 Switzerland Travel
+</footer>
+<script>
+
+const observer = new IntersectionObserver((entries)=>{
+
+    entries.forEach(entry=>{
+
+        if(entry.isIntersecting){
+            entry.target.classList.add("show");
+        }
+
+    });
+
+},{
+    threshold:0.1
+});
+
+document.querySelectorAll(".card").forEach(card=>{
+
+    card.classList.add("reveal");
+    observer.observe(card);
+
+});
+
+const glow=document.createElement("div");
+
+glow.style.position="fixed";
+glow.style.width="250px";
+glow.style.height="250px";
+glow.style.borderRadius="50%";
+glow.style.background="rgba(33,150,243,.15)";
+glow.style.filter="blur(70px)";
+glow.style.pointerEvents="none";
+glow.style.zIndex="1";
+
+document.body.appendChild(glow);
+
+document.addEventListener("mousemove",(e)=>{
+
+    glow.style.left=(e.clientX-125)+"px";
+    glow.style.top=(e.clientY-125)+"px";
+
+});
+
+
+for(let i=0;i<40;i++){
+
+    const snow=document.createElement("div");
+
+    snow.innerHTML="❄";
+
+    snow.style.position="fixed";
+    snow.style.left=Math.random()*100+"vw";
+    snow.style.top="-50px";
+    snow.style.fontSize=(Math.random()*15+10)+"px";
+    snow.style.color="white";
+    snow.style.opacity=Math.random();
+    snow.style.pointerEvents="none";
+    snow.style.zIndex="999";
+
+    snow.style.animation=
+    `snowFall ${Math.random()*10+8}s linear infinite`;
+
+    document.body.appendChild(snow);
+
+}
+
+const style=document.createElement("style");
+
+style.innerHTML=`
+@keyframes snowFall{
+from{
+transform:translateY(-50px);
+}
+to{
+transform:translateY(110vh);
+}
+}
+`;
+
+document.head.appendChild(style);
+
+</script>
+</body>
+</html>

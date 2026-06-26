@@ -1,0 +1,378 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+
+
+* {
+
+    margin: 0;
+
+    padding: 0;
+
+    box-sizing: border-box;
+
+}
+
+
+
+body {
+
+    min-height: 100vh;
+
+    background:
+
+        linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), 
+
+        linear-gradient(135deg, #1a365d 0%, #002b49 40%, #d87d4a 85%, #e1a95f 100%);
+
+   
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-attachment: fixed;
+
+   
+
+    font-family: 'Poppins', sans-serif;
+
+    padding-bottom: 60px; 
+
+}
+
+
+.title {
+
+    text-align: center;
+
+    font-family: 'Bebas Neue', sans-serif;
+
+    font-size: 100px;
+
+    letter-spacing: 10px;
+
+    margin: 40px 0;
+
+    background: linear-gradient(
+
+        90deg,
+
+        #00eaff, 
+
+        #00ffc8, 
+
+        #e1a95f, 
+
+        #d87d4a, 
+
+        #00eaff
+
+    );
+
+    background-size: 300%;
+
+
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+
+    animation: glow 5s linear infinite;
+
+}
+
+
+
+@keyframes glow {
+
+    from { background-position: 0%; }
+
+    to { background-position: 300%; }
+
+}
+
+
+
+/* กล่องการ์ดกลุ่ม */
+
+.container {
+
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 35px;
+
+    width: 90%;
+
+    margin: auto;
+
+}
+
+
+
+/* 📋 ตัวการ์ดสไตล์กระจกฝ้าออสเตรเลีย (Glassmorphism) */
+
+.card {
+
+    width: 280px;
+
+    padding: 30px 25px;
+
+    border-radius: 25px;
+
+   
+
+    /* สไตล์กระจกฝ้าหรูหรา */
+
+    background: rgba(255, 255, 255, 0.08);
+
+    backdrop-filter: blur(15px);
+
+    -webkit-backdrop-filter: blur(15px);
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+   
+
+    /* ดึงขอบบนหนาโทนสีส้มอิฐสไตล์ Outback มาใช้ร่วมด้วย */
+
+    border-top: 5px solid #d87d4a;
+
+
+
+    text-align: center;
+
+    color: white;
+
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease, background 0.4s;
+
+}
+
+
+
+/* เอฟเฟกต์เมื่อเอาเมาส์มาวางบนตัวการ์ด */
+
+.card:hover {
+
+    transform: translateY(-15px) scale(1.03);
+
+    background: rgba(255, 255, 255, 0.15); /* สว่างขึ้นตอนจ้องมอง */
+
+   
+
+    /* แสงนีออนออร่ารอบการ์ด สะท้อนเฉดสีฟ้าน้ำทะเลประกายส้มทอง */
+
+    box-shadow:
+
+        0 0 15px rgba(0, 234, 255, 0.3),
+
+        0 0 30px rgba(225, 169, 95, 0.3),
+
+        0 15px 35px rgba(0, 0, 0, 0.4);
+
+}
+
+
+
+/* 🖼️ รูปโปรไฟล์วงกลม */
+
+.card img {
+
+    width: 150px; /* ปรับขนาดสมดุลกับความกว้าง 280px */
+
+    height: 150px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    border: 4px solid white;
+
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+
+}
+
+
+
+/* เมื่อเอาเมาส์วางบนการ์ด รูปภาพจะหมุนและขยายมีออร่า */
+
+.card:hover img {
+
+    transform: scale(1.06) rotate(3deg);
+
+    box-shadow:
+
+        0 0 20px #00ffbf,
+
+        0 0 40px rgba(225, 169, 95, 0.6);
+
+}
+
+
+
+/* ⚡️ เอฟเฟกต์เมื่อสัมผัสและกดที่ชื่อ (Name Hover & Active Effect) ⚡️ */
+
+.card h2 {
+
+    margin-top: 18px;
+
+    font-size: 24px;
+
+    color: #ffffff;
+
+    cursor: pointer;
+
+    display: inline-block;
+
+    position: relative;
+
+    transition: color 0.2s ease, transform 0.1s ease;
+
+}
+
+
+
+/* ขีดเส้นใต้สไตล์คุณ (แต่ปรับแอนิเมชันให้เสถียรและใช้สีเขียวยูคาลิปตัสนีออน) */
+
+.card h2::after {
+
+    content: '';
+
+    display: block;
+
+    width: 0; /* เริ่มต้นจาก 0 */
+
+    height: 3px;
+
+    background: #00ffc8;
+
+    margin: 8px auto 0 auto;
+
+    transition: width 0.3s ease; /* เส้นจะวิ่งยืดออกมาด้านข้างสวยงาม */
+
+}
+
+
+
+/* เมื่อเมาส์ชี้ไปที่ชื่อ: ชื่อเปลี่ยนเป็นสีทอง + เส้นใต้ขยายออก */
+
+.card h2:hover {
+
+    color: #e1a95f;
+
+}
+
+
+
+.card h2:hover::after {
+
+    width: 100%; /* เส้นใต้ยาวเต็มตัวอักษร */
+
+}
+
+
+
+/* เอฟเฟกต์เสริม: เมื่อ "คลิกค้าง" ที่ชื่อ ตัวอักษรจะยุบลงไปเหมือนกดปุ่ม */
+
+.card h2:active {
+
+    transform: scale(0.9);
+
+    color: #d87d4a; /* กลายเป็นสีส้มอิฐตอนกด */
+
+}
+
+
+
+/* รายละเอียดข้อความ */
+
+.card p {
+
+    margin-top: 10px;
+
+    font-size: 0.95rem;
+
+    color: #dddddd;
+
+    line-height: 1.5;
+
+}
+
+
+
+/* คลาสจัดสีตำแหน่งเฉพาะตัว (เขียวป่ายูคาลิปตัสสว่างเพื่อให้เห็นชัดบนการ์ดมืด) */
+
+.card .role {
+
+    font-weight: 700;
+
+    color: #00ff88;
+
+    font-size: 0.85rem;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1.5px;
+
+    margin-top: 5px;
+
+}
+
+
+
+/* ปุ่มหน้าแรก (สไตล์กระจกวิบวับเข้าชุด) */
+
+.bottom-home {
+
+    position: fixed;
+
+    bottom: 20px;
+
+    left: 20px;
+
+    padding: 12px 22px;
+
+    border-radius: 50px;
+
+    text-decoration: none;
+
+    color: white;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    backdrop-filter: blur(5px);
+
+    -webkit-backdrop-filter: blur(5px);
+
+    border: 1px solid #00ffd5;
+
+    transition: .3s;
+
+    font-weight: 500;
+
+}
+
+
+
+.bottom-home:hover {
+
+    background: #00ff9d;
+
+    color: black;
+
+    box-shadow:
+
+        0 0 20px #00ffb3,
+
+        0 0 40px #00ffea;
+
+    transform: scale(1.05);
+
+}
